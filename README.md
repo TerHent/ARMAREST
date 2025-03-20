@@ -70,4 +70,7 @@ To allow the tests to run, these processes (explained in the "running" section) 
 
 The backend server has to run with the environment variable SECRET_SIGNING_KEY set to "testkey" as this key is used by the jwt tokens in the tests.
 
+##
+This project was created by Arved Ehrnsperger, Konstantin Kanchev, Sebastian Kirmayer and Timur Umarov,
+
 The end2end tests can then be run with `npx playwright test` (Note the x in npx).
