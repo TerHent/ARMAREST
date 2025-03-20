@@ -1,0 +1,29 @@
+#%RAML 1.0
+title: ARMAREST EmergencyStop
+traits:
+  secured: !include secured.raml
+
+/:
+  get:
+    is: [ secured ]
+    description: Get the current emergency stop state
+    responses:
+      200:
+        description: "Getting the state was successful."
+        body:
+          application/json:
+            type: boolean
+/stop:
+  put:
+    is: [ secured ]
+    description: Trigger an emergency stop through Ice.
+    responses:
+      204:
+        description: The emergency stop was triggered successfully.
+/release:
+  put:
+    is: [ secured ]
+    description: Release the emergency stop through Ice.
+    responses:
+      204:
+        description: The emergency stop was released successfully.

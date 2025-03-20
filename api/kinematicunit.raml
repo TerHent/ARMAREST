@@ -1,0 +1,206 @@
+#%RAML 1.0
+title: ARMAREST KinematicUnit
+types:
+  Joint:
+    type: object
+    properties:
+      angle: number | null
+      velocity: number | null
+      torque: number | null
+      acceleration: number | null
+      current: number | null
+      motorTemperature: number | null
+      controlMode: ControlMode
+      status: JointStatus | null
+  JointStatus:
+    type: object
+    properties:
+      operationStatus:
+        enum: [ Offline, Online, Initialized ]
+      errorStatus:
+        enum: [ Ok, Warning, Error]
+      enabled: boolean
+      emergencyStop: boolean
+  ControlMode:
+    enum: [ Disabled, Unknown, PositionControl, VelocityControl, TorqueControl, PositionVelocityControl ]
+  JointStatic:
+    type: object
+    properties:
+      type: JointType
+      limitLo: number
+      limitHi: number
+  JointType:
+    enum: [ Revolute, Prismatic ]
+  Error:
+    type: object
+    discriminator: kind
+    properties:
+      kind: string
+  RangeViolation:
+    type: object
+    properties:
+      rangeFrom: number
+      rangeTo: number
+      actualValue: number
+  OutOfRangeException:
+    type: Error
+    properties:
+      violation: RangeViolation[]
+  ControlModeNotSupportedException:
+    type: Error
+    properties:
+      mode: ControlMode
+  KinematicUnitUnavailable:
+    type: Error
+    properties:
+      nodeOwners: string[]
+  KinematicUnitNotOwnedException:
+    type: Error
+    properties:
+      nodes: string[]
+      
+traits:
+  secured: !include secured.raml
+
+/:
+  get:
+    is: [ secured ]
+    description: Get a list of all KinematicUnits.
+    responses:
+      200:
+        description: All KinematicUnits
+        body:
+          application/json:
+            type: string[]
+/{unit}:
+  uriParameters:
+    unit:
+      type: string
+      description: The KinematicUnit
+      required: true
+  /joints/:
+    get:
+      is: [ secured ]
+      description: Get all joint values. Get this at least once per second for safety.
+      responses:
+        200:
+          description: All joints and their values
+          body:
+            application/json:
+              object:
+                properties:
+                  //:
+                    type: Joint 
+  /joints/static:
+    get:
+      is: [ secured ]
+      description: Get static data for all joints. Get this only once.
+      responses:
+        200:
+          description: All joints and their static data
+            application/json:
+              object:
+                properties:
+                  //:
+                    type: JointStatic
+  /joint/{name}:
+    uriParameters:
+      name:
+        type: string
+        description: The name of the joint
+        required: true
+    get:
+      is: [ secured ]
+      description: Get values of the joint named {name}.
+      responses:
+        200:
+          body:
+            application/json:
+              type: Joint
+    /static:
+      get:
+        is: [ secured ]
+        description: Get static data of the joint named {name}.
+        responses:
+          200:
+            body:
+              application/json:
+                type: JointStatic
+    /angle:
+      get:
+        is: [ secured ]
+        description: Get the current angle of the joint
+        responses:
+          200:
+            body:
+              application/json:
+                type: number
+      put:
+        is: [ secured ]
+        description: Set the angle of the joint
+        queryParameters:
+          angle:
+            type: number
+            description: The new angle
+            required: true
+            example: 45.0
+        responses:
+          204:
+            description: The angle was set.
+          400:
+            description: The new angle is invalid.
+            body:
+              application/json:
+                type: Error
+    /velocity:
+      get:
+        is: [ secured ]
+        description: Get the current velocity of the joint
+        responses:
+          200:
+            body:
+              application/json:
+                type: number
+      put:
+        is: [ secured ]
+        description: Set the velocity of the joint
+        queryParameters:
+          velocity:
+            type: number
+            description: The new velocity
+            required: true
+            example: 45.0
+        responses:
+          204:
+            description: The velocity was set.
+          400:
+            description: The new velocity is invalid.
+            body:
+              application/json:
+                type: Error
+    /torque:
+      get:
+        is: [ secured ]
+        description: Get the current torque of the joint
+        responses:
+          200:
+            body:
+              application/json:
+                type: number
+      put:
+        is: [ secured ]
+        description: Set the torque of the joint
+        queryParameters:
+          torque:
+            type: number
+            description: The new torque
+            required: true
+            example: 45.0
+        responses:
+          204:
+            description: The torque was set.
+          400:
+            description: The new torque is invalid.
+            body:
+              application/json:
+                type: Error

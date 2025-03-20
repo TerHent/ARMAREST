@@ -1,0 +1,54 @@
+\chapter{Degree of Implementation of Hard and Soft Requirements}
+
+This chapter is focused on providing a comprehensive overview of the hard and soft requirements set for the ARMAREST project. We will examine the extent to which these requirements have been met and implemented, and identify any areas that need further improvement or development. This chapter will provide a detailed analysis of the functionalities and features developed, as well as a comparison between the initial project requirements and the final outcome.
+
+\section{Hard Requirements}
+
+All hard requirements are completely fulfilled in the backend. The implementation of the frontend covers all hard requirements as well, but it contains a significant amount of bugs that will be fixed in the next phase.
+
+\subsection*{Foundation}
+\begin{enumerate}
+    \item[/HR10/] Our REST API exposes endpoints to a few important internal components.
+    \item[/HR11/] An Emergency Shutdown button allows the user to stop the movement of the robot at any moment for preventative measures.
+    \item[/HR12/] The \gls{frontend} has limited capabilities to recover from a lost connection. There are still bugs which will be fixed in the next phase. For example, log messages are droppped.
+    \item[/HR13/] The \gls{frontend} shows GUIs to allow the user simpler access to the API.
+\end{enumerate}
+
+\subsection*{Authentication}
+\begin{enumerate}
+    \item[/HR20/] The API requires authentication through tokens.
+    \item[/HR21/] End users and other API clients can obtain tokens with roles as well as additional permissions through the CLI. 
+\end{enumerate}
+
+\subsection*{Logger}
+\begin{enumerate}
+    \item[/HR30/] The Logger shows log messages together with timestamps and importance (e.g. Info, Warning, Verbose) from many components in the Robot.
+    \item[/HR31/] Our \gls{backend} receives these log messages from the robot through \gls{ice}.
+    \item[/HR32/] The messages are filtered by the \gls{frontend} according not only to the verbosity level, but also can be filtered by custom filters in the \gls{frontend}.
+\end{enumerate}
+
+\subsection*{KinematicUnitGUI}
+\begin{enumerate}
+    \item[/HR40/] The KinematicUnitGUI shows sensor values from all joints of the robot.
+    \item[/HR41/] By choosing a joint and a control mode the user can manipulate the position and velocity values.
+\end{enumerate}
+
+\subsection*{RemoteGUI}
+\begin{enumerate}
+    \item[/HR50/] The RemoteGUI shows the GUIs it receives through ARMAREST in HTML. However, some widgets that can appear in Remote GUIs have some bugs which will be fixed in the next phase.
+    \item[/HR51/] The user can select if updates should be sent automatically and can send them manually. However, there are currently bugs in this implementation.
+    \item[/HR52/] All GUI widgets are sent to the frontend correctly. However, some layouts currently contain bugs which will be fixed in the next phase.
+\end{enumerate}
+
+\section{Soft Requirements}
+
+\subsection*{Flexible Layout}
+Due to lack of support of the original flexible layout solution (Golden Layout), we had to change libraries that we are using. Right now, ARMAREST is using the React Workspaces library. All the requirements described in the scope statement regarding flexible layout are met.
+
+\subsection*{Additional Service}
+The requirements for a few additonal services, such as the PlatformUnit and StateCharts, were envisioned as soft requirements in the scope statement as well.
+We have decided against implementing them at this time to focus on the Hard Requirements. However, during our implementation we kept in mind that these might be added in the future.
+
+\subsection*{Websocket}
+We deemed the additional performance improvements provided by websockets not worth the added complexity of a seperate communications channel.
+For now, the frontend only polls (and pushes) through the REST API.

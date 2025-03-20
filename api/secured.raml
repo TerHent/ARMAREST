@@ -1,0 +1,20 @@
+#%RAML 1.0 Trait
+usage: Apply this to any method that needs to be secured
+description: Some requests require authentication.
+headers:
+  access_token:
+    description: JWT token.
+    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.dyt0CoTl4WoVjAHI9Q_CwSKhl6d_9rhM3NrXuJttkao
+    required: true
+responses:
+  401:
+    description: The request is not authorized.
+  403:
+    description: The supplied token lacks required permissions.
+    body:
+      application/json:
+        type: object
+        properties:
+          permission:
+            type: string[]
+            description: The required permission(s)

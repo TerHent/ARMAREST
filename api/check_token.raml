@@ -1,0 +1,11 @@
+#%RAML 1.0
+title: ARMAREST Check Token
+traits:
+  secured: !include secured.raml
+/:
+  get:
+    is: [ secured ]
+    description: Check if a given token is valid.
+    responses:
+      204:
+        description: The token is valid.

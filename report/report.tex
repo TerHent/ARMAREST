@@ -1,0 +1,126 @@
+% !TeX encoding = UTF-8
+
+% Warning: Do not edit the template file.  For feedback or similar contact
+% Christian Dreher: c.dreher@kit.edu
+\documentclass[english,ngerman]{template/h2treprt}
+
+\usepackage[fontsize=12pt]{fontsize}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xparse}
+\urlstyle{same}
+\usepackage{relsize}
+\usepackage{lipsum}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage[toc]{glossaries}
+\makeglossaries
+\input{main/glossary.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CONFIGURATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\mythesis}{Implementation Report}
+\renewcommand{\mytitle}{ARMAREST}
+\renewcommand{\myshorttitle}{A RESTful API for Interacting With ArmarX Robots}
+\renewcommand{\myname}{Arved Ehrnsperger, Konstantin Kanchev, Sebastian Kirmayer, Timur Umarov, Yasin Yildirim}
+\renewcommand{\timeend}{January 13, 2022}
+\renewcommand{\advisorsingular}{Betreuer}
+%\newcommand{\referee}{Prof. Dr.-Ing. Tamim Asfour}
+%\newcommand{\refereethree}{Third Referee}
+\newcommand{\advisor}{Christian Dreher, M.Sc.}
+\newcommand{\advisortwo}{Fabian Peller, M.Sc.}
+\newcommand{\advisorthree}{Tobias Jacob, M.Sc.}
+
+% Meta data in the PDF file.
+\hypersetup{
+	pdfauthor={\myname},
+	pdftitle={\mytitle},
+	pdfsubject={\mytitle},
+	%pdfkeywords={Thesis, Template, LaTeX, \hht}  % Some relevant keywords of your choice.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Set the content language.  Default language is "english".  If you want to
+% write your thesis in German, use "ngerman" instead.
+\selectlanguage{english}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% FRONT MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+\maketitle
+\cleardoublepage
+
+% THIS SETS THE FONT SIZE. DEFAULT IS 12pt.
+\changefontsize{11pt}
+
+%\scriptsize
+
+%\makedeclaration
+%\cleardoublepage
+
+%\input{front/abstract_de.tex}
+%\cleardoublepage
+
+%\iflanguage{english}{%
+  %\input{front/abstract_en.tex}%
+  %\cleardoublepage%
+%}{}
+
+\tableofcontents
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   MAIN MATTER   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+\input{main/introduction.tex}
+\clearpage
+
+\input{main/design-changes.tex}
+\clearpage
+
+\input{main/implementation-degree.tex}
+\clearpage
+
+\input{main/organization.tex}
+\clearpage
+
+\input{main/unit-tests.tex}
+\clearpage
+
+\printglossaries
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   BACK MATTER   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+\iflanguage{english}{%
+  \bibliographystyle{abbrvnat}%
+}{%
+  \bibliographystyle{dinat}%
+}
+%\bibliography{bibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   APPENDIX   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+
+%\input{appendix/example_appendix.tex}
+%\cleardoublepage
+
+\end{document}

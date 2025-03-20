@@ -1,0 +1,129 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% H2T Paper Definitions
+%
+% Please include this file in all H2T papers and use the definitions
+% as a common standard.
+%
+% If something is missing in this file, please extend it, but keep
+% it simple and don't pollute it.
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+% Packages
+\usepackage[per-mode=fraction]{siunitx}
+\usepackage{comment}
+\usepackage[normalem]{ulem}
+\usepackage{xspace}
+
+% Units commonly used in robotics
+\DeclareSIUnit\px{px}
+\DeclareSIUnit\fps{fps}
+
+% Colors
+\definecolor{OliveGreen}{RGB}{0,200,25}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\darkgreen}[1]{\textcolor{OliveGreen}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+
+% Abbreviations
+\newcommand{\ie}{i.\,e.\, }
+\newcommand{\eg}{e.\,g.\, }
+\newcommand{\etal}{et\,al.\ }
+
+% H2T
+\newcommand{\hht}{\texorpdfstring{H\textsuperscript{2}T}{H2T}\xspace}
+\newcommand{\ackhht}{The authors are with the High Performance Humanoid Technologies Lab, Institute for Anthropomatics and Robotics, Karlsruhe Institute of Technology (KIT), Germany}
+
+% ARMAR names
+\newcommand{\armar}{\mbox{ARMAR}\xspace}
+\newcommand{\armarI}{\mbox{ARMAR-I}\xspace}
+\newcommand{\armarII}{\mbox{ARMAR-II}\xspace}
+\newcommand{\armarIII}{\mbox{ARMAR-III}\xspace}
+\newcommand{\armarIIIa}{\mbox{ARMAR-IIIa}\xspace}
+\newcommand{\armarIIIb}{\mbox{ARMAR-IIIb}\xspace}
+\newcommand{\armarIV}{\mbox{ARMAR-4}\xspace}
+\newcommand{\armarV}{\mbox{ARMAR-5}\xspace}
+\newcommand{\armarVI}{\mbox{ARMAR-6}\xspace}
+\newcommand{\armarVIsh}{\mbox{ARMAR-6-SH}\xspace}
+
+% EXO names
+\newcommand{\exoI}{\mbox{KIT-EXO-1}\xspace}
+
+% ArmarX
+\newcommand{\armarx}{\mbox{ArmarX}\xspace}
+
+% Project names
+\newcommand{\inopro}{\mbox{INOPRO}\xspace}
+\newcommand{\imagine}{\mbox{IMAGINE}\xspace}
+\newcommand{\secondhands}{\mbox{SecondHands}\xspace}
+\newcommand{\timestorm}{\mbox{TimeStorm}\xspace}
+\newcommand{\walkman}{\mbox{WALK-MAN}\xspace}
+\newcommand{\rebaplus}{\mbox{REBA+}\xspace}
+\newcommand{\invasic}{\mbox{InvasIC}\xspace}
+\newcommand{\isupport}{\mbox{i-Support}\xspace}
+\newcommand{\koroibot}{\mbox{KoroiBot}\xspace}
+\newcommand{\xperience}{\mbox{Xperience}\xspace}
+\newcommand{\grasp}{\mbox{GRASP}\xspace}
+\newcommand{\pacoplus}{\mbox{PACO-PLUS}\xspace}
+\newcommand{\sofobe}{\mbox{SFB 588}\xspace}
+\newcommand{\arches}{\mbox{ARCHES}\xspace}
+
+% Project acknowledgments
+\newcommand{\ackInoproSecondHands}{This work has been supported by the German Federal Ministry of Education and Research (BMBF) under the project INOPRO (16SV7665) and  has received funding from the European Union’s Horizon 2020 Research and Innovation programme under grant agreement No 643950 (SecondHands).}
+\newcommand{\ackImagine}{The research leading to these results has received funding from the European Union’s Horizon 2020 Research and Innovation programme under grant agreement No. 731761 (IMAGINE).}
+\newcommand{\ackInopro}{This work has been supported by the German Federal Ministry of Education and Research (BMBF) under the project INOPRO (16SV7665).}
+\newcommand{\ackTimestorm}{The research leading to these results has received funding from the European Union’s Horizon 2020 research and innovation programme under the FET Proactive grant agreement No 641100 (TIMESTORM).}
+\newcommand{\ackWalkman}{The research leading to these results has received funding from the European Union Seventh Framework Programme under grant agreement no. 611832 (WALK-MAN).}
+\newcommand{\ackSecondhands}{The research leading to these results has received funding from the European Union’s Horizon 2020 Research and Innovation programme under grant agreement No 643950 (SecondHands).}
+\newcommand{\ackKoroibot}{The research leading to these results has received funding from the European Union Seventh Framework Programme under grant agreement no. 611909 (KoroiBot).}
+\newcommand{\ackXperience}{The research leading to these results has received funding from the European Union Seventh Framework Programme under grant agreement no. 270273 (Xperience).}
+\newcommand{\ackIsupport}{The research leading to these results has received funding from the European Union H2020 Programme under grant agreement no. 643666 (I-SUPPORT).}
+\newcommand{\ackWalkmanKoroibot}{The research leading to these results has received funding from the European Union Seventh Framework Programme under grant agreement no 611832 (WALK-MAN) and grant agreement no 611909 (KoroiBot).}
+\newcommand{\ackWalkmanXperience}{The research leading to these results has received funding from the European Union Seventh Framework Programme under grant agreement no 611832 (WALK-MAN) and grant agreement no 270273 (Xperience).}
+\newcommand{\ackHeika}{HEiKA - Heidelberg Karlsruhe Research Partnership, Heidelberg University, Karlsruhe Institute of Technology (KIT); Germany}
+\newcommand{\ackInvasic}{The research leading to these results has received funding from the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) – Project Number 146371743 – TRR 89 Invasive Computing.}
+\newcommand{\ackReba}{The research leading to these results has received  funding from the German Research Foundation (DFG: Deutsche Forschungsgemeinschaft) under Priority Program on Autonomous Learning (SPP 1527).}
+\newcommand{\ackXperienceSFB}{The research leading to these results has received funding from the European Union Seventh Framework Programme under grant agreement no. 270273, (Xperience) and from the German Research Foundation (DFG: Deutsche Forschungsgemeinschaft) under the SFB 588.}
+\newcommand{\ackSFB}{The work described in this paper was partially conducted within the the German Humanoid Research project SFB588 funded by the German Research Foundation (DFG: Deutsche Forschungsgemeinschaft).}
+\newcommand{\ackPacoplus}{The work described in this paper was partially conducted within the EU Cognitive Systems project PACO-PLUS (FP6-027657) funded by the European Commission.}
+\newcommand{\ackGrasp}{The work described in this paper was partially conducted within the EU Cognitive Systems project GRASP (FP7-215821) funded by the European Commission.}
+\newcommand{\ackSFBPacoplus}{The work described in this paper was partially conducted within the German Humanoid Research project SFB588 funded by the German Research Foundation (DFG: Deutsche Forschungsgemeinschaft) and the EU Cognitive Systems project PACO-PLUS (FP6-027657) funded by the European Commission.}
+\newcommand{\ackSFBGrasp}{The work described in this paper was partially conducted within the German Humanoid Research project SFB588 funded by the German Research Foundation (DFG: Deutsche Forschungsgemeinschaft) and the EU Cognitive Systems project GRASP (FP7-215821) funded by the European Commission.}
+\newcommand{\ackARCHES}{This study was supported by the Helmholtz Association, Project ARCHES (contract number ZT‐0033).}
+\newcommand{\ackSecondHandsARCHES}{The research leading to these results has received funding from the European Union’s Horizon 2020 Research and Innovation programme under grant agreement No 643950 (SecondHands) and the Helmholtz Association, Project ARCHES (contract number ZT‐0033).}
+
+% Revision macros
+\newcommand{\added}[1]{\darkgreen{#1}}
+\newcommand{\replaced}[2]{\red{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}\darkgreen{#2}}
+\newcommand{\removed}[1]{\red{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}}
+\newcommand{\remark}[1]{\blue{#1}}
+
+% Uncomment the following lines for the final version (without revision marks)
+% Attention: Always check the final version!
+%            Misplaced revision macros might add unwanted spaces.
+
+\begin{comment}
+	\renewcommand{\added}[1]{#1}
+	\renewcommand{\replaced}[2]{#2}
+	\renewcommand{\removed}[1]{}
+\end{comment}
+
+% More complex revision macros (for rebuttal letters, subject to extension)
+\newcommand{\addedimage}[1]{\fcolorbox{blue}{blue}{#1}}
+\newcommand{\removedfootnote}[1]{\footnote{\removed{#1}}}
+\newcommand{\removedsubsection}[1]{\subsection{\texorpdfstring{\removed{#1}}{#1}}}
+\newcommand{\replacedsubsection}[2]{\subsection{\texorpdfstring{\removed{#1}\added{#2}}{#2}}}
+\newcommand{\addedsection}[1]{\section{\texorpdfstring{\added{#1}}{#1}}}
+
+% Uncomment the following lines for the final version (without revision marks)
+% Attention: Always check the final version!
+\begin{comment}
+	\renewcommand{\addedimage}[1]{#1}
+	\renewcommand{\removedfootnote}[1]{}
+	\renewcommand{\removedsubsection}[1]{}
+	\renewcommand{\replacedsubsection}[2]{\subsection{#2}}
+	\renewcommand{\removedsubsection}[1]{}
+\end{comment}
+

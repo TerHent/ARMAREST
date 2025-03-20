@@ -1,0 +1,75 @@
+#%RAML 1.0
+title: ARMAREST Logger
+types:
+  LogMessage:
+    type: object
+    properties:
+      message: string
+      author:  string
+      id:
+        type: integer
+        minimum: 0
+      verbosity:
+        type: integer
+        example: 3 # INFO
+        # UNDEFINED=0, DEBUG=1, VERBOSE=2, INFO=3, IMPORTANT=4, WARN=5, ERROR=6, FATAL=7
+      time: datetime-only 
+      group: string
+      tag: string
+      file: string
+      line: integer
+      function: string
+      backtrace: string
+      threadId: integer
+traits:
+  secured: !include secured.raml
+/log:
+  get:
+    description: "Get log messages"
+    is: [ secured ]
+    queryParameters:
+      after:
+        description: "The id of the last received log message. If omitted, the API will respond with as many recent messages as it can."
+        required: false
+        type: integer
+        example: 100
+      before:
+        description: "The id of the oldest log message. When it is set, the API will respond with more log history to enable scrolling up."
+        required: false
+        type: integer
+        example: 50
+      verbosity:
+        description: "The verbosity of the most verbose log messages"
+        required: true
+        type: string
+        example: "info"
+      component:
+        description: "If set, only consider log messages from this component."
+        required: false
+        type: string
+        example: "LeftHandUnitApp"
+      function:
+        description: "If set, only consider log messages from this function."
+        required: false
+        type: string
+      tag:
+        description: "If set, only consider log messages tagged with this tag"
+        required: false
+        type: string
+      file:
+        description: "If set, only consider log messages from this file"
+        required: false
+        type: string
+      maxMessages:
+        description: "The maximum amount of messages in the answer."
+        required: false
+        type: integer
+        default: 1000
+    responses:
+      200:
+        description: "Log messages matching the query."
+        body:
+          application/json:
+            type: LogMessage[]
+      204:
+        description: "There are no log messages matching the query."

@@ -1,0 +1,185 @@
+#%RAML 1.0
+title: ARMAREST RemoteUnitGui
+types:
+  Widget:
+    type: object
+    discriminator: kind
+    properties:
+      name: string
+      kind: string # See  https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/#using-discriminator
+      value: ValueVariant
+      state: WidgetState
+      children: Widget[]
+  ValueVariantType:
+    enum: [ EMPTY, BOOL, INT, FLOAT, STRING, VECTOR3, MATRIX4 ]
+  WidgetState:
+    type: object
+    properties:
+      hidden: boolean
+      disabled: boolean
+  ValueVariant:
+    type: object
+    properties:
+      type: ValueVariantType
+      value: (integer | number | string | number[] )
+  WidgetWithToolTip:
+    type: Widget
+    properties:
+      toolTip: string
+  HBoxLayout:
+    type: Widget
+  VBoxLayout:
+    type: Widget
+  SimpleGridLayoutSpanningChild:
+    type: Widget
+    properties:
+      columns: integer
+  SimpleGridLayout:
+    type: Widget
+    properties:
+      columns: integer
+  GridLayout:
+    type: Widget
+    properties:
+      data: GridLayoutData[]
+  GridLayoutData:
+    type: object
+    properties:
+      row: integer
+      col: integer
+      spanRow: integer
+      spanCol: integer
+  GroupBox:
+    type: Widget
+    properties:
+      label: string
+      collapsed: boolean
+  HSpacer:
+    type: Widget
+  VSpacer:
+    type: Widget
+  HLine:
+    type: Widget
+  VLine:
+    type: Widget
+  CheckBox:
+    type: WidgetWithToolTip
+    properties:
+      label: string
+  ToggleButton:
+    type: WidgetWithToolTip
+    properties:
+      label: string
+  Button:
+    type: WidgetWithToolTip
+    properties:
+      label: string
+  IntSpinBox:
+    type: WidgetWithToolTip
+    properties:
+      min: integer
+      max: integer
+  IntSlider:
+    type: WidgetWithToolTip
+    properties:
+      min: integer
+      max: integer
+  FloatSpinBox:
+    type: WidgetWithToolTip
+    properties:
+      min: number
+      max: number
+      steps: integer
+      decimals: integer
+  FloatSlider:
+    type: WidgetWithToolTip
+    properties:
+      min: number
+      max: number
+      steps: integer
+  Label:
+    type: WidgetWithToolTip
+  LineEdit:
+    type: WidgetWithToolTip
+  ComboBox:
+    type: WidgetWithToolTip
+    properties:
+      options: string[]
+  Vector3f:
+    type: object
+    properties:
+      x: number
+      y: number
+      z: number
+  Vector3i:
+    type: object
+    properties:
+      x: number
+      y: number
+      z: number
+  Vector3fSpinBoxes:
+    type: WidgetWithToolTip
+    properties:
+      min: Vector3f
+      max: Vector3f
+      steps: Vector3i
+      decimals: Vector3i
+  PosRPYSpinBoxes: # Matrix4f
+    type: WidgetWithToolTip
+    properties:
+      minPos: Vector3f
+      maxPos: Vector3f
+      minRPY: Vector3f
+      maxRPY: Vector3f
+      stepsPos: Vector3i
+      decimalsPos: Vector3i
+      stepsRPY: Vector3i
+      decimalsRPY: Vector3i
+  # Widget has many children classes. Parse according to the "kind" attribute.
+traits:
+  secured: !include secured.raml
+
+/tabs/:
+  get:
+    is: [ secured ]
+    description: "Get all tab names"
+    responses:
+      200:
+        description: "Array of all tab names"
+        body:
+          application/json:
+            type: str[]
+/tab/{name}:
+  uriParameters:
+    name:
+      type: string
+      description: The name of the tab
+      required: true
+  get:
+    is: [ secured ]
+    description: "Get the data of the tab named {name}"
+    responses:
+      200:
+        description: "Data of the tab named {name}."
+        body:
+          application/json:
+            type: Widget
+  put:
+    is: [ secured ]
+    description: "Update the values in this tab"
+    queryParameters:
+      widgetName:
+        type: string
+        description: The name of the widget in the tab named {name} that should be modified.
+        required: true
+      updatedValue:
+        type: (integer | number | string | number[] )
+        description: The new value
+        required: true
+      updatedValueType:
+        type: ValueVariantType
+        description: The type of the changed value
+        required: true
+    responses:
+      204:
+        description: "The updatedValue of the widget named valueName in the tab {name} was set successfully"
