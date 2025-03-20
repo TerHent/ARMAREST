@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Robot Type="FakeRobot-Part2" RootNode="FakePart2">
+  <RobotNode name="FakePart2">
+    <Child name="Fake Joint 6" />
+    <Child name="Fake Joint 7" />
+    <Child name="Fake Joint 8" />
+    <Child name="Fake Joint 9" />
+    <Child name="Fake Joint 10" />
+  </RobotNode>
+
+  <RobotNode name="Fake Joint 6">
+    <Joint type="revolute">
+      <Limits unit="degree" lo="-10" hi="10" />
+    </Joint>
+  </RobotNode>
+
+  <RobotNode name="Fake Joint 7">
+    <Joint type="revolute">
+      <Limits unit="degree" lo="-10" hi="10" />
+    </Joint>
+  </RobotNode>
+
+  <RobotNode name="Fake Joint 8">
+    <Joint type="revolute">
+      <Limits unit="degree" lo="-10" hi="10" />
+    </Joint>
+  </RobotNode>
+
+  <RobotNode name="Fake Joint 9">
+    <Joint type="revolute">
+      <Limits unit="degree" lo="-10" hi="10" />
+    </Joint>
+  </RobotNode>
+
+  <RobotNode name="Fake Joint 10">
+    <Joint type="revolute">
+      <Limits unit="degree" lo="-10" hi="10" />
+    </Joint>
+  </RobotNode>
+</Robot>

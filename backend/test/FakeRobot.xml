@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Robot Type="FakeRobot" RootNode="FakeRoot">
+  <RobotNode name="FakeRoot">
+    <Child name="Fake Joint 1" />
+    <Child name="Fake Joint 2" />
+    <Child name="Fake Joint 3" />
+    <Child name="Fake Joint 4" />
+    <Child name="Fake Joint 5" />
+  </RobotNode>
+
+  <RobotNode name="Fake Joint 1">
+    <Joint type="revolute">
+      <Limits unit="degree" lo="-10" hi="10" />
+    </Joint>
+  </RobotNode>
+
+  <RobotNode name="Fake Joint 2">
+    <Joint type="revolute">
+      <Limits unit="deg" lo="-10" hi="10" />
+    </Joint>
+  </RobotNode>
+
+  <RobotNode name="Fake Joint 3">
+    <Joint type="revolute">
+      <Limits unit="radian" lo="-0.17453292519943295" hi="0.17453292519943295" />
+    </Joint>
+  </RobotNode>
+
+  <RobotNode name="Fake Joint 4">
+    <Joint type="revolute">
+      <Limits unit="rad" lo="-0.17453292519943295" hi="0.17453292519943295" />
+    </Joint>
+  </RobotNode>
+
+  <RobotNode name="Fake Joint 5">
+    <Joint type="revolute">
+      <Limits unit="degree" lo="-10" hi="10" />
+    </Joint>
+    <ChildFromRobot>
+      <File>FakeRobot-part2.xml</File>
+    </ChildFromRobot>
+  </RobotNode>
+
+  <RobotNodeSet name="FakeNodeSet">
+    <Node name="Fake Joint 1" />
+    <Node name="Fake Joint 2" />
+    <Node name="Fake Joint 3" />
+    <Node name="Fake Joint 4" />
+    <Node name="Fake Joint 5" />
+    <Node name="Fake Joint 6" />
+    <Node name="Fake Joint 7" />
+    <Node name="Fake Joint 8" />
+    <Node name="Fake Joint 9" />
+    <Node name="Fake Joint 10" />
+  </RobotNodeSet>
+</Robot>
