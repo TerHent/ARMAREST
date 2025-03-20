@@ -1,0 +1,49 @@
+.kinematic-body {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    column-gap: 1rem;
+}
+
+.resizable {
+    resize: horizontal;
+    overflow: auto;
+    margin: 0px;
+    width: auto;
+}
+
+/* .dropdown {
+    position: absolute;
+    top: 50px;
+    left: 80vw;
+    z-index: 999;
+} */
+
+#dropdown-menu {
+    display: none;
+}
+
+.dropdownOpen {
+    display: block;
+}
+
+.navbar-light .navbar-brand {
+    color: aliceblue;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: aliceblue;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: aliceblue;
+    text-decoration: none;
+    transition: none;
+}
+
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-nav .nav-link:hover,
+.nav-link:hover {
+    color: pink;
+}

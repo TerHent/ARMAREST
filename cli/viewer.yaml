@@ -1,0 +1,8 @@
+name: Viewer
+permissions:
+  log:
+    - read
+  kinematic:
+    - read
+  remote:
+    - read

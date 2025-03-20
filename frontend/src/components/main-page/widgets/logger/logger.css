@@ -1,0 +1,51 @@
+.logger-body {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    column-gap: 1rem;
+}
+
+.resizable {
+    resize: horizontal;
+    overflow: auto;
+    margin: 0px;
+    width: auto;
+}
+
+.btn-group {
+    margin-left: 16px;
+    margin-top: 10px;
+}
+
+.range {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+p .verblevel {
+    margin-left: 16px;
+}
+
+.verbosity-cell {
+    stroke: 10px white;
+    font-weight: bold;
+}
+
+.important-cell {
+    color: rgb(195, 15, 211);
+}
+
+.warn-cell {
+    color: rgb(255, 119, 0);
+}
+
+.error-cell {
+    color: rgb(255, 0, 0);
+}
+
+.fatal-cell {
+    color: rgb(162, 18, 10);
+}
+
+.function-cell {
+    font-family: monospace;
+}

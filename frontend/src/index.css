@@ -1,0 +1,123 @@
+#root,
+html,
+body {
+    height: 100% !important;
+    width: 100% !important;
+    overflow: auto;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #525f7f;
+    text-align: left;
+    background-color: #1e1e2f;
+    padding-top: 70px;
+}
+
+#workspace {
+    min-height: 100vh !important;
+    width: 100%;
+}
+
+.MainPage,
+.layout {
+    min-height: 100vh;
+    overflow: auto;
+    min-width: 100%;
+}
+.table-scroll {
+    border-collapse: collapse;
+    height: 510px;
+    position: relative;
+    overflow: auto;
+}
+
+.widget-wrapper,
+.react-grid-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    height: inherit;
+    background-color: #191528;
+    background-attachment: fixed;
+}
+
+.card {
+    background: #191528 fixed !important;
+    border: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 1px 20px 0px rgb(0 0 0 / 10%);
+}
+
+.card-header {
+    padding: 15px 15px 0;
+    border: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.title {
+    margin-right: 20px;
+    font-weight: 400;
+}
+
+.dropdown {
+    float: right;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #525f7f;
+    background-color: transparent;
+}
+
+.table-primary {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    opacity: 1;
+    background-color: #27293d;
+}
+
+td {
+    border-color: rgba(255, 255, 255, 0.1);
+    padding: 12px 7px;
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.fixed-header thead th {
+    /* the thead selector is required because there are th elements in the body */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+}
+
+.footer {
+    width: 100%;
+}
+
+h2 {
+    color: aliceblue;
+}
+
+p {
+    color: aliceblue;
+}
+
+h4 {
+    color: aliceblue;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+label {
+    color: #dc3545;
+}

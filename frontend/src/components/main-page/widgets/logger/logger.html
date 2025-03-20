@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="logger.css" />
+    <title>Logger</title>
+    <style>
+        .addFilter:hover {
+            background-color: gray;
+        }
+
+        .removeFilter:hover {
+            background-color: gray;
+        }
+
+        .filters {}
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <h1>This is Logger</h1>
+    <p class="filters">Filters</p>
+    <button class="button addFilter">Add filter</button>
+    <button class="button removeFilter">Remove filter</button>
+    <!--<table>
+      <tr>
+        <th>Time</td>
+         <!--<td>Component</td> 
+        <th>Tag</td>
+        <th>Verbosity</td>
+        <th>Message</td>
+        <th>File</td>
+        <th>Function</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>14</td>
+        <td>10</td>
+        <td>16</td>
+        <td>14</td>
+        <td>10</td>
+      </tr>
+    </table>
+  </body>
+</html> -->
+
+    <div class="container">
+        <div class="table">
+            <div class="table-header">
+                <div class="header__item">Time</div>
+                <div class="header__item">
+                    <a id="wins" class="filter__link filter__link--number" href="#">Component</a>
+                </div>
+                <div class="header__item">
+                    <a id="draws" class="filter__link filter__link--number" href="#">Tag</a>
+                </div>
+                <div class="header__item">
+                    <a id="losses" class="filter__link filter__link--number" href="#">Verbosity</a>
+                </div>
+                <div class="header__item">
+                    <a id="total" class="filter__link filter__link--number" href="#">Message</a>
+                </div>
+                <div class="header__item">
+                    <a id="total" class="filter__link filter__link--number" href="#">File</a>
+                </div>
+                <div class="header__item">
+                    <a id="total" class="filter__link filter__link--number" href="#">Function</a>
+                </div>
+            </div>
+            <div class="table-content">
+                <div class="table-row">
+                    <div class="table-data">kek</div>
+                    <div class="table-data">2</div>
+                    <div class="table-data">0</div>
+                    <div class="table-data">1</div>
+                    <div class="table-data">5</div>
+                    <div class="table-data">5</div>
+                    <div class="table-data">5</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-data">kekich</div>
+                    <div class="table-data">1</div>
+                    <div class="table-data">1</div>
+                    <div class="table-data">5</div>
+                    <div class="table-data">5</div>
+                    <div class="table-data">2</div>
+                    <div class="table-data">3</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-data">h2t</div>
+                    <div class="table-data">0</div>
+                    <div class="table-data">5</div>
+                    <div class="table-data">5</div>
+                    <div class="table-data">2</div>
+                    <div class="table-data">2</div>
+                    <div class="table-data">2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

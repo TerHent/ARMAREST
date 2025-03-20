@@ -1,0 +1,73 @@
+{
+    "name": "frontend",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@emotion/react": "^11.10.5",
+        "@table-library/react-table-library": "^4.0.23",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^13.5.0",
+        "@types/jest": "^27.5.2",
+        "@types/node": "^16.18.11",
+        "@types/react": "^18.0.27",
+        "@types/react-dom": "^18.0.10",
+        "bootstrap": "^5.2.3",
+        "playwright": "^1.31.2",
+        "react": "^18.2.0",
+        "react-base-table": "^1.13.2",
+        "react-bootstrap": "^2.7.2",
+        "react-dom": "^18.2.0",
+        "react-grid-layout": "^1.3.4",
+        "react-notifications-component": "^4.0.1",
+        "react-scripts": "5.0.1",
+        "react-table": "^7.8.0",
+        "reactjs-popup": "^2.0.5",
+        "reactstrap": "^9.1.5",
+        "typescript": "^4.9.4",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "set \"API_BASE_URL= http://localhost:3300/api/v1\" && ./node_modules/.bin/webpack serve --open",
+        "start-windows": "set \"API_BASE_URL= http://localhost:3300/api/v1\" && node_modules\\.bin\\webpack.cmd serve --open",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "test:ci": "npm run test -- --testResultsProcessor=\"jest-junit\" --watchAll=false --ci --coverage"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@babel/core": "^7.20.5",
+        "@babel/preset-env": "^7.20.2",
+        "@babel/preset-react": "^7.18.6",
+        "@babel/preset-typescript": "^7.18.6",
+        "@playwright/test": "^1.31.2",
+        "@types/lodash": "^4.14.191",
+        "@types/react-grid-layout": "^1.3.2",
+        "css-loader": "^6.7.3",
+        "jest-junit": "^15.0.0",
+        "process": "^0.11.10",
+        "react-test-renderer": "^18.2.0",
+        "source-map-loader": "^4.0.1",
+        "webpack": "^5.75.0",
+        "webpack-cli": "^5.0.0",
+        "webpack-dev-server": "^4.11.1"
+    }
+}

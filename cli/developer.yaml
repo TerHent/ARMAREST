@@ -1,0 +1,6 @@
+name: Developer
+permissions:
+  log: all
+  kinematic: all
+  remote: all
+  emergencystop: all
